@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".presentation.fragment.ReadNewsFragment">
+
+    <ImageView
+        android:id="@+id/main_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@color/black"/>
+
+    <RelativeLayout
+        android:id="@+id/readnews_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_new_24" />
+
+        <ImageView
+            android:id="@+id/savebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_saved" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/informationofnews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/readnews_toolbar"
+        android:layout_marginHorizontal="20dp"
+        android:paddingTop="80dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/dateofnews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="14-10-21"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/titleofnews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateofnews"
+            android:fontFamily="serif"
+            android:text="Lorem ipsum dolor sit amet consectetur adi"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/newsView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+
+        android:paddingHorizontal="20dp"
+        android:background="@drawable/rounded_whitebox"
+        android:layout_below="@id/informationofnews">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/detail_authorview"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/profile_img"
+                android:layout_width="60dp"
+                android:layout_centerVertical="true"
+                android:layout_height="60dp"
+                android:src="@drawable/profilepuc"/>
+
+            <LinearLayout
+                android:id="@+id/authorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toStartOf="@+id/saveBtn"
+                android:layout_toEndOf="@id/profile_img"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameauthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Aksh Mehta"
+                    android:textColor="@color/textcolor"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/pressnameauthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aksh Mehta"
+                    android:textColor="@color/text_grey"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/saveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_read_save_btn"
+                android:fontFamily="serif"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detail_authorview"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:id="@+id/content_news"
+                android:text="@string/value"
+                android:textColor="@color/textcolor"
+                android:textSize="22sp" />
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

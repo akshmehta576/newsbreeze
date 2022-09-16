@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.practice.greedygame.presentation.fragment.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_savedNewsFragment"
+            app:destination="@id/savedNewsFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_readNewsFragment"
+            app:destination="@id/readNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/readNewsFragment"
+        android:name="com.practice.greedygame.presentation.fragment.ReadNewsFragment"
+        android:label="fragment_read_news"
+        tools:layout="@layout/fragment_read_news" >
+        <action
+            android:id="@+id/action_readNewsFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNewsFragment"
+        android:name="com.practice.greedygame.presentation.fragment.SavedNewsFragment"
+        android:label="SavedNewsFragment" >
+        <action
+            android:id="@+id/action_savedNewsFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_savedNewsFragment_to_readNewsFragment"
+            app:destination="@id/readNewsFragment" />
+    </fragment>
+</navigation>

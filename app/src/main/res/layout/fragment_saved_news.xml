@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".presentation.fragment.SavedNewsFragment">
+
+    <RelativeLayout
+        android:id="@+id/home_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/saved_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/backbtnSve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/newsapi_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Saved"
+                android:textColor="@color/green_color"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/search_box_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/saved_toolbar"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/rounded_search_box"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/editext_search_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_whitebox"
+                android:drawableStart="@drawable/ic_group_63"
+                android:drawablePadding="10dp"
+                android:hint="Search"
+                android:imeOptions="actionSearch"
+                android:textColorHint="@color/text_grey" />
+
+            <Spinner
+                android:id="@+id/spinner_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_group_65"
+                android:spinnerMode="dialog" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/placeholder_text"
+            android:textSize="18sp"
+            android:fontFamily="serif"
+            android:textColor="@color/textcolor"
+            android:visibility="invisible"
+            android:gravity="center"
+            android:text="No data is saved for offline."/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/search_box_view"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="34dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="15dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/savenewslist_recyclerview"
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_save_news" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_save"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:tint="@color/green_color" />
+
+</RelativeLayout>
